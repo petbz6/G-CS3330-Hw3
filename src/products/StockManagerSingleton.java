@@ -33,4 +33,12 @@ public class StockManagerSingleton {
 		}
 		
 	}
+	
+	public boolean addItem(MediaProduct product) {
+		if(product == null) {
+			return false;
+		}
+		productList.add(product);
+		return true;
+	}
 }

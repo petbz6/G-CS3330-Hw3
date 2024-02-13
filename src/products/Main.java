@@ -16,5 +16,16 @@ public class Main {
 		   for(MediaProduct i : initialize.productList) {
 				System.out.println(i.toString());
 			}
+		   		   
+		   MediaProduct item = new MediaProduct("Test", 100.0, 1999, Genre.ROCK);
+		   
+		   boolean test2 = initialize.addItem(item);
+		   
+		   //Show if the test failed or succeeded.
+		   System.out.println("Test2: " + test2);
+		   
+		   for(MediaProduct i : initialize.productList) {
+				System.out.println(i.toString());
+			}
 	}
 }
