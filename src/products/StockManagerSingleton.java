@@ -41,4 +41,17 @@ public class StockManagerSingleton {
 		productList.add(product);
 		return true;
 	}
+	
+	public boolean removeItem(MediaProduct product) {
+		int index = 0;
+		for(MediaProduct i : productList) {
+			System.out.println(i.toString());
+			if(product.genre == i.genre && product.price == i.price && product.title == i.title && product.year == i.year) {
+				productList.remove(index);
+				return true;
+			}
+			index++;
+		}
+		return false;
+	}
 }

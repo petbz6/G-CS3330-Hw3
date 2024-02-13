@@ -27,5 +27,14 @@ public class Main {
 		   for(MediaProduct i : initialize.productList) {
 				System.out.println(i.toString());
 			}
+		   
+		   boolean test3 = initialize.removeItem(item);
+		   
+		   //Show if the test failed or succeeded.
+		   System.out.println("Test3: " + test3);
+		   
+		   for(MediaProduct i : initialize.productList) {
+				System.out.println(i.toString());
+			}
 	}
 }
