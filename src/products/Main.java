@@ -1,5 +1,7 @@
 package products;
 
+import java.util.ArrayList;
+
 public class Main {
 	
 	public static void main(String[] args) {
@@ -16,7 +18,12 @@ public class Main {
 		   for(MediaProduct i : initialize.productList) {
 				System.out.println(i.toString());
 			}
-		   		   
+		   
+		   //Update the price of the first object in the productList
+		   MediaProduct updatedProduct = initialize.productList.get(0);
+		   initialize.updateItemPrice(updatedProduct, 27.99);
+		   
+
 		   MediaProduct item = new MediaProduct("Test", 100.0, 1999, Genre.ROCK);
 		   
 		   boolean test2 = initialize.addItem(item);
@@ -35,6 +42,9 @@ public class Main {
 		   
 		   for(MediaProduct i : initialize.productList) {
 				System.out.println(i.toString());
-			}
+		   }
+		   
+		   
 	}
 }
+
