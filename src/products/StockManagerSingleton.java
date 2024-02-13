@@ -34,6 +34,16 @@ public class StockManagerSingleton {
 		
 	}
 	
+	public boolean updateItemPrice(MediaProduct product, double newPrice) {
+	    for (MediaProduct item : productList) {
+	        if (item.equals(product)) {
+	            item.setPrice(newPrice);
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+	
 	public boolean addItem(MediaProduct product) {
 		if(product == null) {
 			return false;
@@ -53,5 +63,5 @@ public class StockManagerSingleton {
 			index++;
 		}
 		return false;
-	}
+	}	
 }
