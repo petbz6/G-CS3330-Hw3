@@ -77,6 +77,7 @@ public class StockManagerSingleton {
 			//If product is below the specified max price add it to the new array list 
 			if(product.price < maxPrice) {
 				mediaBelowPrice.add(product);
+				System.out.println(product.toString());
 			}
 		}
 		return mediaBelowPrice;
@@ -113,7 +114,9 @@ public class StockManagerSingleton {
 	}
 	
 	public void printListOfMediaProduct(ArrayList<MediaProduct>productList){
-		
+		for(MediaProduct i : productList) {
+			System.out.println(i.toString());
+		}
 	}
 	
 }

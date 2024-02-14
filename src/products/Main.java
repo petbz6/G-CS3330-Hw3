@@ -52,6 +52,13 @@ public class Main {
 		   
 		   boolean test5 = initialize.saveStock();
 		   System.out.println("Test 5: " + test5);
+		   
+		   //Get all media products below max price of 20
+		   initialize.getMediaProductBelowPrice(20);
+		   
+		   //Print productList
+		   initialize.printListOfMediaProduct(null);
+		   
 	}
 }
 
