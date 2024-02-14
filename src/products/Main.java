@@ -42,20 +42,16 @@ public class Main {
 		   
 		   for(MediaProduct i : initialize.productList) {
 				System.out.println(i.toString());
-<<<<<<< HEAD
 			}
 		   
-		   int maxPrice = 50;
-		   getMediaProductBelowPrice(maxPrice);
+		   MediaProduct item2 = new MediaProduct("TestingHi", 900.0, 1999, Genre.ROCK);
 		   
-		   for(MediaProduct i : initialize.mediaBelowPrice) {
-				System.out.println(i.toString());
-		   }
-=======
-		   }
+		   boolean test4 = initialize.addItem(item2);
 		   
+		   System.out.println("Test 4: " + test4);
 		   
->>>>>>> branch 'main' of https://github.com/petbz6/G-CS3330-Hw3.git
+		   boolean test5 = initialize.saveStock();
+		   System.out.println("Test 5: " + test5);
 	}
 }
 
