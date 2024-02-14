@@ -44,6 +44,20 @@ public class Main {
 				System.out.println(i.toString());
 		   }
 		   
+		   MediaProduct item2 = new MediaProduct("TestingHi", 900.0, 1999, Genre.ROCK);
+		   
+		   boolean test4 = initialize.addItem(item2);
+		   
+		   System.out.println("Test 4: " + test4);
+		   
+		   boolean test5 = initialize.saveStock();
+		   System.out.println("Test 5: " + test5);
+		   
+
+		   
+		   
+		   
+		   
 		   
 	}
 }

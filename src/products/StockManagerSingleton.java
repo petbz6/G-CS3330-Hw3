@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class StockManagerSingleton {
 	ArrayList<MediaProduct>productList = new ArrayList<MediaProduct>();
@@ -64,4 +66,35 @@ public class StockManagerSingleton {
 		}
 		return false;
 	}	
+
+	public boolean saveStock() {
+	    try (FileWriter writer = new FileWriter(inventoryFilePath)) {
+	        String[] headers = {"Type", "Title", "Price", "Year", "Genre"};
+	
+	        // Correctly append headers with a separator and end with a newline
+	        for (int i = 0; i < headers.length; i++) {
+	            writer.append(headers[i]);
+	            if (i < headers.length - 1) {
+	                writer.append(", "); // Add a separator
+	            }
+	        }
+	        writer.append(System.getProperty("line.separator")); // New line after headers
+	
+	        for (MediaProduct product : productList) {
+	            if (product instanceof CDRecordProduct) {
+	                writer.write("CD, " + product.getTitle() + "," + product.getPrice() + "," + product.getYear() + "," + product.getGenre() + System.getProperty("line.separator"));
+	            } else if (product instanceof TapeRecordProduct) { // Correct variable used
+	                writer.write("Tape," + product.getTitle() + "," + product.getPrice() + "," + product.getYear() + "," + product.getGenre() + System.getProperty("line.separator"));
+	            } else {
+	                writer.write("Vinyl," + product.getTitle() + "," + product.getPrice() + "," + product.getYear() + "," + product.getGenre() + System.getProperty("line.separator"));
+	            }
+	        }
+	        return true; // Corrected boolean literal
+	    } catch (IOException e) {
+	        System.out.println("An error has occurred");
+	        e.printStackTrace();
+	        return false; // Corrected boolean literal
+	    }
+	}
+
 }
