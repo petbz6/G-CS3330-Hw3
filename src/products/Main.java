@@ -1,6 +1,6 @@
 package products;
 
-import java.util.ArrayList;
+
 
 public class Main {
 	
@@ -57,7 +57,7 @@ public class Main {
 		   initialize.getMediaProductBelowPrice(20);
 		   
 		   //Print productList
-		   initialize.printListOfMediaProduct(null);
+		   initialize.printListOfMediaProduct(initialize.productList);
 		   
 	}
 }
