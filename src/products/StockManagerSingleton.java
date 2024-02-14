@@ -16,15 +16,30 @@ public class StockManagerSingleton {
 		try {
 			Scanner fileIn = new Scanner(new FileInputStream(inventoryFilePath));
 			fileIn.nextLine();
-			
+						
 			while (fileIn.hasNextLine()) {
 				String[] fields = fileIn.nextLine().split(",");
+				String type = fields[0];
 				String title = fields[1];
 				double price = Double.parseDouble(fields[2]);
 				int year = Integer.parseInt(fields[3]);
 				Genre genre = Genre.valueOf(fields[4]);
-				
-				MediaProduct product = new MediaProduct(title, price, year, genre);
+
+				MediaProduct product;
+				switch (type) {
+					case "CD":
+						product = new CDRecordProduct(title, price, year, genre);
+						break;
+					case "Tape":
+						product = new TapeRecordProduct(title, price, year, genre);
+						break;
+					case "Vinyl":
+						product = new VinylRecordProduct(title, price, year, genre);
+						break;
+					default:
+						continue;
+						//if product does not match any of our subclasses, then just go to next item in list
+				}
 				productList.add(product);
 			}
 			fileIn.close();
@@ -35,6 +50,7 @@ public class StockManagerSingleton {
 		}
 		
 	}
+	
 	
 	public boolean updateItemPrice(MediaProduct product, double newPrice) {
 	    for (MediaProduct item : productList) {
