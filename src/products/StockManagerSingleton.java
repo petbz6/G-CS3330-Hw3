@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 
 public class StockManagerSingleton {
 	ArrayList<MediaProduct>productList = new ArrayList<MediaProduct>();
@@ -63,5 +64,31 @@ public class StockManagerSingleton {
 			index++;
 		}
 		return false;
-	}	
+	}
+	
+	public boolean savestock() {
+		try {
+			FileWriter writer = new FileWriter(inventoryFilePath);
+			for(MediaProduct product: productList) {
+				  writer.write(product + System.lineSeparator());
+				}
+			writer.close();
+			return true;
+		}catch (FileNotFoundException e) {
+			System.out.println("An error has occurred. File not found.");
+			return false;
+		}
+		
+	}
+	
+	public ArrayList<MediaProduct> getMediaProductBelowPrice(int maxPrice){
+		ArrayList<MediaProduct>mediaBelowPrice = new ArrayList<MediaProduct>();
+		for (MediaProduct product :productList) {
+			if(product.price < maxPrice) {
+				mediaBelowPrice.add(product);
+			}
+		}
+		return mediaBelowPrice;
+	}
+	
 }

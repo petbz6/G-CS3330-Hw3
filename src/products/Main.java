@@ -36,5 +36,12 @@ public class Main {
 		   for(MediaProduct i : initialize.productList) {
 				System.out.println(i.toString());
 			}
+		   
+		   int maxPrice = 50;
+		   getMediaProductBelowPrice(maxPrice);
+		   
+		   for(MediaProduct i : initialize.mediaBelowPrice) {
+				System.out.println(i.toString());
+		   }
 	}
 }
