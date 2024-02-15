@@ -1,6 +1,6 @@
 package products;
 
-
+import java.util.ArrayList;
 
 public class Main {
 	
@@ -59,6 +59,14 @@ public class Main {
 		   //Print productList
 		   initialize.printListOfMediaProduct(initialize.productList);
 		   
+		   //Print VinylRecordProduct array
+		   ArrayList<VinylRecordProduct> vinylRecordList = initialize.getVinylRecordList(initialize.productList);
+		   System.out.println("\nVinyl Record Products: ");
+		    // Print out the VinylRecordProducts
+		    for (VinylRecordProduct vinylRecordProduct : vinylRecordList) {
+		        System.out.println(vinylRecordProduct.toString());
+		    }
+
 	}
 }
 
