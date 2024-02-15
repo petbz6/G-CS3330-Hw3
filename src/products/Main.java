@@ -66,6 +66,24 @@ public class Main {
 		    for (VinylRecordProduct vinylRecordProduct : vinylRecordList) {
 		        System.out.println(vinylRecordProduct.toString());
 		    }
+		    
+			  //Print CDRecordProduct array
+			ArrayList<CDRecordProduct> CDRecordList = initialize.getCDRecordList(initialize.productList);
+			System.out.println("\nCD Record Products: ");
+			    // Print out the CDRecordProducts
+			for (CDRecordProduct CDRecordProduct : CDRecordList) {
+				System.out.println(CDRecordProduct.toString());
+				}
+			  //Print TapeRecordProduct array
+			ArrayList<TapeRecordProduct> TapeRecordList = initialize.getTapeRecordList(initialize.productList);
+			System.out.println("\nTape Record Products: ");
+			    // Print out the TapeRecordProducts
+			for (TapeRecordProduct TapeRecordProduct : TapeRecordList) {
+				System.out.println(TapeRecordProduct.toString());
+				}
+		
+
+
 
 	}
 }

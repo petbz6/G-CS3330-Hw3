@@ -31,7 +31,7 @@ public class StockManagerSingleton {
 	                    product = new TapeRecordProduct(title, price, year, genre);
 	                    break;
 	                case "Vinyl":
-product = new VinylRecordProduct(title, price, year, genre);
+	                	product = new VinylRecordProduct(title, price, year, genre);
 	                    break;
 	                default:
 	                    continue;
@@ -143,6 +143,35 @@ product = new VinylRecordProduct(title, price, year, genre);
 	    }
 	    return vinylRecordList;
 	}
+	
+	
+	public ArrayList<CDRecordProduct> getCDRecordList(ArrayList<MediaProduct> productList) {
+	    ArrayList<CDRecordProduct> CDRecordList = new ArrayList<>();
+	    for (MediaProduct product : productList) {
+	       
+	        if ("CD".equals(product.getType())) {
+	            // If it is, add it to the vinylRecordList
+	            if (product instanceof CDRecordProduct) {
+	                CDRecordList.add((CDRecordProduct) product);
+	            }
+	        }
+	    }
+	    return CDRecordList;
+	}
+	public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList) {
+	    ArrayList<TapeRecordProduct> TapeRecordList = new ArrayList<>();
+	    for (MediaProduct product : productList) {
+	       
+	        if ("Tape".equals(product.getType())) {
+	            // If it is, add it to the vinylRecordList
+	            if (product instanceof TapeRecordProduct) {
+	                TapeRecordList.add((TapeRecordProduct) product);
+	            }
+	        }
+	    }
+	    return TapeRecordList;
+	}
+	
 	
 }
 
