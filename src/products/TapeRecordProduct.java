@@ -8,7 +8,11 @@ public class TapeRecordProduct extends MediaProduct{
 	}
 	
 	public TapeRecordProduct(TapeRecordProduct tapeRecordProduct) {
-		super(tapeRecordProduct);
+		super(tapeRecordProduct.getTitle(),
+	          tapeRecordProduct.getPrice(),
+	          tapeRecordProduct.getYear(),
+	          tapeRecordProduct.getGenre()
+	        );
 	}
 }
 

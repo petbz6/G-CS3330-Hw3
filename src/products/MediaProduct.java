@@ -15,10 +15,10 @@ public class MediaProduct {
 	}
 	
 	public MediaProduct(MediaProduct mediaproduct) {
-		this.title = mediaproduct.title;
-		this.price = mediaproduct.price;
-		this.year = mediaproduct.year;
-		this.genre = mediaproduct.genre;
+		this.title = mediaproduct.getTitle();
+		this.price = mediaproduct.getPrice();
+		this.year = mediaproduct.getYear();
+		this.genre = mediaproduct.getGenre();
 	}
 	
 	public String getTitle() {

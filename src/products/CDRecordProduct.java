@@ -8,6 +8,10 @@ public class CDRecordProduct extends MediaProduct {
 	}
 	
 	public CDRecordProduct(CDRecordProduct cdRecordProduct) {
-		super(cdRecordProduct);
+		super(cdRecordProduct.getTitle(),
+	          cdRecordProduct.getPrice(),
+	          cdRecordProduct.getYear(),
+	          cdRecordProduct.getGenre()
+	        );
 	}
 }
